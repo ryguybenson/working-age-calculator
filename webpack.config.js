@@ -1,7 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -15,17 +15,21 @@ module.exports = {
   },
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Ping Pong',
+      title: 'Triangle Tracker',
       template: './src/index.html',
-      inject: 'body'
-    }),
-    new CleanWebpackPlugin(['dist'])
+      inject: 'body',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    })
   ],
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           'style-loader',
           'css-loader',
@@ -34,9 +38,31 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [
+                /node_modules/,
+                /spec/
+              ],
         loader: "eslint-loader"
-      }
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'assets/images/'
+              }
+            }
+          ]
+        },
+
+        {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
     ]
   }
 };
