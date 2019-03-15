@@ -7,7 +7,7 @@ export class Age {
 
   mercuryChecker() {
     let age = this.age;
-    const mercury = 1;
+    const mercury = 0.24;
     let answer = (age * mercury);
     return answer;
   }
@@ -22,14 +22,14 @@ export class Age {
   marsChecker() {
     let age = this.age;
     const mars = 1.88;
-    let answer =  (age / mars);
+    let answer =  (age * mars);
     return answer;
   }
 
   jupiterChecker() {
     let age = this.age;
     const jupiter = 11.86;
-    let answer =  (age / jupiter);
+    let answer =  (age * jupiter);
     return answer;
   }
 }
