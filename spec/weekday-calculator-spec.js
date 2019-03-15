@@ -1,19 +1,10 @@
-import {Calender} from './../src/calculator.js';
+import { Age } from './../src/calculator.js';
 
-describe('Calender', function() {
 
-it('will test if its a leap year', function () {
-  let year = new Calender(1,1,2000)
-  expect(year.checkYear()).toEqual(true);
+describe ('Age', function() {
 
-})
-it("will test whether the month has 31 days", function() {
-  let month = new Calender(3,2,2000)
-  expect(month.checkMonth()).toEqual(true);
+  it('should return a normal mercury age', function() {
+    let age = new Age(20)
+    expect(age.mercuryChecker()).toEqual(22);
   })
-it("KOHICHI YOU", function() {
-  let day = new Calender(3,5,2001)
-  expect(day.checkDay()).toEqual(true);
-
-})
 })
