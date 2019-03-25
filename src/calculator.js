@@ -6,30 +6,34 @@ export class Age {
     this.expected = 80;
   }
 //PLANET AGE CALCULATOR FUNCTIONS
-  mercuryChecker() {
-    let age = this.age;
-    const mercury = 0.24;
-    let answer = (age * mercury);
-    return answer;
-  }
-  venusChecker() {
-    let age = this.age;
-    const venus = 0.62;
-    let answer = (age * venus);
-    return answer;
-  }
-  marsChecker() {
-    let age = this.age;
-    const mars = 1.88;
-    let answer =  (age * mars);
-    return answer;
-  }
-  jupiterChecker() {
-    let age = this.age;
-    const jupiter = 11.86;
-    let answer =  (age * jupiter);
-    return answer;
-  }
+mercuryChecker() {
+  let age = this.age;
+  const mercury = 0.24;
+  let decimalAge = (age * mercury);
+  let answer = Math.floor(decimalAge);
+  return answer;
+}
+venusChecker() {
+  let age = this.age;
+  const venus = 0.62;
+  let decimalAge = (age * venus);
+  let answer = Math.floor(decimalAge);
+  return answer;
+}
+marsChecker() {
+  let age = this.age;
+  const mars = 1.88;
+  let decimalAge =  (age * mars);
+  let answer = Math.floor(decimalAge);
+  return answer;
+}
+jupiterChecker() {
+  let age = this.age;
+  const jupiter = 11.86;
+  let decimalAge =  (age * jupiter);
+  let answer = Math.floor(decimalAge);
+  return answer;
+}
 
   //PLANET LIFE EXPECTANCY FUNCTIONS
   mercuryLifeChecker() {
@@ -39,10 +43,12 @@ export class Age {
     const expected = this.expected;
 
     if (answer < expected) {
-      let remaining = (expected - answer);
+      let remainingAge = (expected - answer);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     } else {
-      let remaining = (answer - expected);
+      let remainingAge = (answer - expected);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     }
   }
@@ -53,10 +59,12 @@ export class Age {
     const expected = this.expected;
 
     if (answer < expected) {
-      let remaining = (expected - answer);
+      let remainingAge = (expected - answer);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     } else {
-      let remaining = (answer - expected);
+      let remainingAge = (answer - expected);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     }
   }
@@ -67,10 +75,12 @@ export class Age {
     const expected = this.expected;
 
     if (answer < expected) {
-      let remaining = (expected - answer);
+      let remainingAge = (expected - answer);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     } else {
-      let remaining = (answer - expected);
+      let remainingAge = (answer - expected);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     }
   }
@@ -81,11 +91,13 @@ export class Age {
     const expected = this.expected;
 
     if (answer < expected) {
-      let remaining = (expected - answer);
+      let remainingAge = (expected - answer);
+      let remaining = Math.floor(remainingAge);
       return remaining;
 
     } else {
-      let remaining = (answer - expected);
+      let remainingAge = (answer - expected);
+      let remaining = Math.floor(remainingAge);
       return remaining;
     }
   }
